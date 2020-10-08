@@ -4,7 +4,6 @@ function getAllPropValues(array, prop) {
 
     for ( const obj of array){
         
-       // console.log(product)
         for (const key in obj) {
             if (key == prop){
                 allPropValues.push(obj[prop]);

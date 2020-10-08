@@ -1,18 +1,31 @@
 function calculateTotalPrice(array, prop) {
   "use strict";
-    let total
+    
+    let totalPrice = 0
+    
     
     for (const obj of array) {
-        console.log(obj)
-    
+        //console.log(obj)
 
-        for (const value in obj) {
-            console.log(value);
-            if value === prop {
-                
+        for (const item in obj) {
+           // console.log(item)
+            if (obj.name == prop)
+        
+            {
+                let objTotal = obj.price * obj.quantity
+                // console.log(objTotal)
+               totalPrice += objTotal
+
+                //totalPrice.push(objTotal);
+                break;
+
             }
         }
+
+
     }
+    return totalPrice
+
 }
 
 // Объекты и ожидаемый результат
@@ -29,11 +42,11 @@ const products = [
 console.log(calculateTotalPrice(products, 'Радар'));
 // 9080
 
-//console.log(calculateTotalPrice(products, 'Сканер'));
+console.log(calculateTotalPrice(products, 'Сканер'));
 // 10200
 
-//console.log(calculateTotalPrice(products, 'Захват'));
+console.log(calculateTotalPrice(products, 'Захват'));
 // 2400
 
-//console.log(calculateTotalPrice(products, 'Дроид'));
+console.log(calculateTotalPrice(products, 'Дроид'));
 // 2800
